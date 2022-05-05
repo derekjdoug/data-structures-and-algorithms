@@ -91,9 +91,8 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  arr.sort(arr.price(a, b){
-    return a.value - b.value
-  });
+  arr.sort((a, b) => a.price - b.price);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
