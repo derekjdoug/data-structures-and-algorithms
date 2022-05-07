@@ -125,10 +125,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  const reversed = str.split();
-  reversed.reduce((previousValue, currentValue) => {
-    return [currentValue,...previousValue];
-  }, []);
+  return str.split('').reduce((previousValue, currentValue) => currentValue + previousValue, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
