@@ -64,9 +64,8 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  let newArr = str;
   for(let i = 0; i <= str.length; i++){
-    result.push(newArr.slice(0 + i));
+    result.push(str.slice(i));
   }
   return result;
 };
@@ -127,7 +126,10 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-
+  recipe.ingredients.forEach(value => {
+    let withoutAmounts = value.slice(value.indexOf(' ') + 1);
+    result.push(withoutAmounts.slice(withoutAmounts.indexOf(' ') + 1));
+  });
   return result;
 };
 
@@ -175,7 +177,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] % 2 === 0) {
+      arr.splice(i, 1);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -305,7 +311,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
