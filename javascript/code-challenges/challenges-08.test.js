@@ -52,12 +52,19 @@ let characters = [
   }
 ];
 
-// const sortByChildren = (charArray) => {
-//   charArray.map(char => )
-// };
+const sortByChildren = (charArray) => {
+  let arr = charArray.sort((a,b) => {
+    if(a.children.length < b.children.length){
+      return -1;
+    }
+    else if(a.children.length === b.children.length && a.name < b.name){
+      return -1;
+    }
+  }
+  );
+  return arr;
+};
 
-// arr.sort((a, b) => a.price - b.price);
-// return arr;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -110,7 +117,7 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   let regex = /\b[A-Z][a-z]*/gm;
-  console.log(str.match(regex));
+  return str.match(regex) || [];
 };
 
 //Solution works in console, not for test.
