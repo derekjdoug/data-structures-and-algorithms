@@ -38,7 +38,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let holdArr = [];
+  input.map(value => {
+    value.map(num => {
+      if (num === target){
+        holdArr.push(target);
+      }
+    });
+  });
+  return holdArr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +60,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let holdArr = [];
+  input.map(value => {
+    value.map(num => {
+      holdArr.push(num);
+    });
+  });
+  return holdArr.reduce((prev, curr) => prev + curr, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +148,13 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  let holdArr = [];
+  data.map(rebels => {
+    if(rebels.gender === 'male' || rebels.gender === 'female'){
+      holdArr.push(rebels.name);
+    }
+  });
+  return holdArr.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,7 +164,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  data.map(rebel => {
 };
 
 /* ------------------------------------------------------------------------------------------------
