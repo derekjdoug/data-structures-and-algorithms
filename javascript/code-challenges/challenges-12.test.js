@@ -7,7 +7,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  return string.replace(/([0])/gm, 'zero');
+  return string.replace(/0/g, 'zero');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  const regex = /^(1\s?)?(\d{3}|\(\d{3}\))[\s-]?\d{3}[\s-]?\d{4}$/im;
+  const regex = /^(1\s?)?(\d{3}|\(\d{3}\))[\s-]?\d{3}[\s-]?\d{4}$/;
   return regex.test(phoneNumber);
 };
 
@@ -106,7 +106,7 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  return elements.map(str => str.match(/<(\/[a-z]+\d?)>/g)).reduce((acc, currValue) => acc.concat(currValue.map(element => element.slice(1,(element.length - 1)))), []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -218,7 +218,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });
