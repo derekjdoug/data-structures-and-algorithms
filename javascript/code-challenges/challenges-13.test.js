@@ -7,7 +7,12 @@ Write a function named longestString that takes in an array of strings and retur
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
+  let currLongest = {string: '', index: -1};
 
+  arr.forEach((str, idx) => {
+    str.length > currLongest.string.length ? currLongest = {string: str, index: idx} : '';
+  });
+  return currLongest.index;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,8 +66,9 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-
+  return str.split('').filter((el, idx) => idx % 2 === 1).join('');
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -71,12 +77,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  if(arr.map(str => str.includes(':)'))){
-    return true;
-  }
-  else{
-    return false;
-  }
+  return arr.every(str => str.includes(':)'));
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
