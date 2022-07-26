@@ -27,7 +27,7 @@ export class LinkedList<T> implements Collection<T> {
 
     while(tracker !== undefined) {
       const strItem = display(tracker.item);
-      str += `${tracker.item} ->`;
+      str += `{ ${tracker.item} } -> `;
       tracker = tracker.next;
     }
     str += 'NULL';
