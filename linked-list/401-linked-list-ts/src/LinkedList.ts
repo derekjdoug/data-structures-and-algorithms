@@ -3,7 +3,7 @@ import { Collection, display } from "./Collection";
 
 export class LinkedList<T> implements Collection<T> {
   start: Node<T> | undefined;
-  // TODO
+
   insert(item: T) {
     const newNode = {
       item: item,
@@ -11,6 +11,7 @@ export class LinkedList<T> implements Collection<T> {
     };
     this.start = newNode;
   }
+
   includes(item: T): boolean {
     let tracker = this.start;
     while(tracker !== undefined) {
@@ -21,6 +22,7 @@ export class LinkedList<T> implements Collection<T> {
     }
     return false;
   }
+
   toString(): string {
     let str = '';
     let tracker = this.start;
@@ -32,6 +34,51 @@ export class LinkedList<T> implements Collection<T> {
     }
     str += 'NULL';
     return str;
+  }
+
+  append(item: T): void {
+    const newNode = {
+      item: item,
+      next: undefined,
+    };
+    let lastNode = this.start;
+    if (lastNode){
+      // Needs while loop to check to ensure next is not undefined
+      while(lastNode.next) {
+      lastNode = lastNode.next;
+      }
+      lastNode.next = newNode
+    }
+  }
+
+  insertBefore(needle: T, item: T) {
+    let tracker = this.start;
+    while (tracker !== undefined) {
+      if(tracker.next?.item === needle) {
+        let shiftedNode = tracker.next;
+        const newNode = {
+          item: item,
+          next: shiftedNode,
+        };
+        tracker.next = newNode;
+      }
+      tracker = tracker.next;
+    }
+  }
+
+  insertAfter(needle: T, item: T) {
+    let tracker = this.start;
+    while (tracker !== undefined) {
+      if(tracker.item === needle) {
+        let shiftedNode = tracker.next;
+        const newNode = {
+          item: item,
+          next: shiftedNode,
+        };
+        tracker.next = newNode;
+      }
+      tracker = tracker.next;
+    }
   }
 }
 
