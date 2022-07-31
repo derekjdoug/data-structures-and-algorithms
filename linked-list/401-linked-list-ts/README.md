@@ -4,11 +4,13 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 ## Challenge
 
-Create a Node class that has properties for the value store in the Node, and a pointer to the next Node.
+Add append, insertAfter, and insertBefore functionality.
 
 ## Approach & Efficiency
 
-We worked through this together in class. I believe that singly linked lists are O(n).
+This was really a brain twister. I relied on help from my collaborators. It makes sense as I worked through it, but writing it out on a sheet of paper (modeling it) was very beneficial.
+
+## Collaborators: Luis Sandoval
 
 ## API
 
