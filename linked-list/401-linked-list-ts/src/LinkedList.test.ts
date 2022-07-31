@@ -37,4 +37,36 @@ describe("linked list", () => {
     console.log(list.toString());
     expect(list.includes("Test")).toBe(false);
   });
+  it("inserts after", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    list.insertAfter("Test 2", "Inserted Test")
+    console.log(list.toString());
+    expect(list.toString()).toBe("{ Test Start } -> { Test 2 } -> { Inserted Test } -> NULL");
+  });
+  it("inserts before", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 3");
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    list.insertBefore("Test 3", "Inserted Test")
+    console.log(list.toString());
+    expect(list.toString()).toBe("{ Test Start } -> { Test 2 } -> { Inserted Test } -> { Test 3 } -> NULL");
+  });
+  it("appends", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 3");
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    list.append("Inserted Test")
+    console.log(list.toString());
+    expect(list.toString()).toBe("{ Test Start } -> { Test 2 } -> { Test 3 } -> { Inserted Test } -> NULL");
+  });
 });

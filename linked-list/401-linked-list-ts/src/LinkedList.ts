@@ -1,4 +1,3 @@
-import { throws } from "assert";
 import { Collection, display } from "./Collection";
 
 export class LinkedList<T> implements Collection<T> {
@@ -61,6 +60,7 @@ export class LinkedList<T> implements Collection<T> {
           next: shiftedNode,
         };
         tracker.next = newNode;
+        break;
       }
       tracker = tracker.next;
     }
