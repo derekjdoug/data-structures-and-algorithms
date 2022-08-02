@@ -10,9 +10,9 @@ Add k-th value from the end of a linked list.
 
 ## Approach & Efficiency
 
-This was really a brain twister. I relied on help from my collaborators. It makes sense as I worked through it, but writing it out on a sheet of paper (modeling it) was very beneficial.
+This was a fun challenge. Efficiency on my functionality will be added in the future, but my code does have to traverse the linked list twice, which is not as efficient as it could be.
 
-## Collaborators
+## Collaborators: David Souther, Zayah Lang
 
 ## API
 

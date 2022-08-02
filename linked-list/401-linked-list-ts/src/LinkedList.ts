@@ -83,18 +83,26 @@ export class LinkedList<T> implements Collection<T> {
     }
   }
 
+
   kthFromEnd(num: number) {
     let listLength = 0;
     let tracker = this.start;
     while (tracker !== undefined) {
       tracker = tracker.next;
-      length++;
+      listLength++;
     }
-    tracker = this.start;
-    while (tracker !== undefined) {
-      for (let i = 1; i < listLength - num + 1; i++) {
-        tracker = tracker.next;
+    if (num > listLength || num < 0) {
+      throw new Error('Sorry, something went wrong.');
+    } else if (num > 1) {
+      tracker = this.start;
+      while (tracker !== undefined) {
+        for (let i = 1; i < listLength - num; i++) {
+          tracker = tracker?.next;
+        }
+        return tracker;
       }
+    } else {
+      tracker = this.start;
       return tracker;
     }
   }
