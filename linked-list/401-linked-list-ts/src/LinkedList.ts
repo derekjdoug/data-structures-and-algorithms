@@ -1,5 +1,7 @@
 import { Collection, display } from "./Collection";
 
+//TODO: Create k-th from the end function
+//STATUS:
 export class LinkedList<T> implements Collection<T> {
   start: Node<T> | undefined;
 
@@ -13,8 +15,8 @@ export class LinkedList<T> implements Collection<T> {
 
   includes(item: T): boolean {
     let tracker = this.start;
-    while(tracker !== undefined) {
-      if(tracker.item === item) {
+    while (tracker !== undefined) {
+      if (tracker.item === item) {
         return true;
       }
       tracker = tracker.next;
@@ -26,7 +28,7 @@ export class LinkedList<T> implements Collection<T> {
     let str = '';
     let tracker = this.start;
 
-    while(tracker !== undefined) {
+    while (tracker !== undefined) {
       const strItem = display(tracker.item);
       str += `{ ${tracker.item} } -> `;
       tracker = tracker.next;
@@ -41,10 +43,10 @@ export class LinkedList<T> implements Collection<T> {
       next: undefined,
     };
     let lastNode = this.start;
-    if (lastNode){
+    if (lastNode) {
       // Needs while loop to check to ensure next is not undefined
-      while(lastNode.next) {
-      lastNode = lastNode.next;
+      while (lastNode.next) {
+        lastNode = lastNode.next;
       }
       lastNode.next = newNode
     }
@@ -53,7 +55,7 @@ export class LinkedList<T> implements Collection<T> {
   insertBefore(needle: T, item: T) {
     let tracker = this.start;
     while (tracker !== undefined) {
-      if(tracker.next?.item === needle) {
+      if (tracker.next?.item === needle) {
         let shiftedNode = tracker.next;
         const newNode = {
           item: item,
@@ -69,7 +71,7 @@ export class LinkedList<T> implements Collection<T> {
   insertAfter(needle: T, item: T) {
     let tracker = this.start;
     while (tracker !== undefined) {
-      if(tracker.item === needle) {
+      if (tracker.item === needle) {
         let shiftedNode = tracker.next;
         const newNode = {
           item: item,
@@ -78,6 +80,30 @@ export class LinkedList<T> implements Collection<T> {
         tracker.next = newNode;
       }
       tracker = tracker.next;
+    }
+  }
+
+
+  kthFromEnd(num: number) {
+    let listLength = 0;
+    let tracker = this.start;
+    while (tracker !== undefined) {
+      tracker = tracker.next;
+      listLength++;
+    }
+    if (num > listLength || num < 0) {
+      throw new Error('Sorry, something went wrong.');
+    } else if (num > 1) {
+      tracker = this.start;
+      while (tracker !== undefined) {
+        for (let i = 1; i < listLength - num; i++) {
+          tracker = tracker?.next;
+        }
+        return tracker;
+      }
+    } else {
+      tracker = this.start;
+      return tracker;
     }
   }
 }

@@ -69,4 +69,54 @@ describe("linked list", () => {
     console.log(list.toString());
     expect(list.toString()).toBe("{ Test Start } -> { Test 2 } -> { Test 3 } -> { Inserted Test } -> NULL");
   });
+  it("finds k-th to end", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 5");
+    list.insert("Test 4");
+    list.insert("Test 3");
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    list.kthFromEnd(3);
+    console.log(list.kthFromEnd(3));
+    expect(list.kthFromEnd(3).item).toBe("Test 2")
+  });
+  it("throws error if k-th to end is longer than list", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 5");
+    list.insert("Test 4");
+    list.insert("Test 3");
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    expect(() => {
+      const badNum = list.kthFromEnd(6);
+      console.log(list.kthFromEnd(6));
+      badNum
+    }).toThrow();
+  });
+  it("handles lists that are 1 node long", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test Start");
+
+    expect(list.kthFromEnd(1)?.item).toBe("Test Start");
+  });
+  it("throws error if k-th to end is less than 0", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 5");
+    list.insert("Test 4");
+    list.insert("Test 3");
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    expect(() => {
+      const badNum = list.kthFromEnd(-6);
+      console.log(list.kthFromEnd(-6));
+      badNum
+    }).toThrow();
+  });
 });
