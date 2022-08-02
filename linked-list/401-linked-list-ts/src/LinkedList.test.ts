@@ -69,4 +69,16 @@ describe("linked list", () => {
     console.log(list.toString());
     expect(list.toString()).toBe("{ Test Start } -> { Test 2 } -> { Test 3 } -> { Inserted Test } -> NULL");
   });
+  it("finds k-th to end", () => {
+    const list = new LinkedList<string>();
+
+    list.insert("Test 5");
+    list.insert("Test 4");
+    list.insert("Test 3");
+    list.insert("Test 2");
+    list.insert("Test Start");
+
+    list.kthFromEnd(3);
+    console.log(list.kthFromEnd(3));
+  })
 });
