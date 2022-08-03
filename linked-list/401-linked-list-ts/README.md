@@ -1,4 +1,4 @@
-# Code Challenge 07
+# Code Challenge 08
 
 ## Singly Linked List
 
@@ -6,13 +6,11 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 ## Challenge
 
-Add k-th value from the end of a linked list.
+Zip two linked list.
 
 ## Approach & Efficiency
 
-This was a fun challenge. Efficiency on my functionality will be added in the future, but my code does have to traverse the linked list twice, which is not as efficient as it could be.
-
-## Collaborators: David Souther, Zayah Lang
+## Collaborators
 
 ## API
 
