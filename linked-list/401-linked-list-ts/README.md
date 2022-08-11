@@ -1,4 +1,4 @@
-# Code Challenge 07
+# Code Challenge 10
 
 ## Singly Linked List
 
@@ -6,13 +6,13 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 ## Challenge
 
-Add k-th value from the end of a linked list.
+Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
 
 ## Approach & Efficiency
 
-This was a fun challenge. Efficiency on my functionality will be added in the future, but my code does have to traverse the linked list twice, which is not as efficient as it could be.
+This was a fun challenge. I leaned on some of the prior code that I had written and adapted it for stacks and queues.
 
-## Collaborators: David Souther, Zayah Lang
+## Collaborators: Hugo Thompson, Luis Sandoval
 
 ## API
 
