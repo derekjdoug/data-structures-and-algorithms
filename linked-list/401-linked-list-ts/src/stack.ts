@@ -32,9 +32,13 @@ export class Stack<T> {
   }
 
   pop(): T | Node<T> | undefined {
-    let top = this.start
-    top = top?.next;
-    return top;
+    let newTop = this.start?.next;
+    let oldTop = this.start;
+    if(newTop && oldTop){
+      this.start = newTop;
+      oldTop.next = undefined;
+    return newTop;
+    }
   }
 }
 
