@@ -1,4 +1,4 @@
-# Code Challenge 10
+# Code Challenge 11
 
 ## Singly Linked List
 
@@ -6,13 +6,13 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 ## Challenge
 
-Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+Implement a data structure called SetOfStacks that creates a new stack once the previous stack has exceeded capacity.
 
 ## Approach & Efficiency
 
 This was a fun challenge. I leaned on some of the prior code that I had written and adapted it for stacks and queues.
 
-## Collaborators: Hugo Thompson, Luis Sandoval
+## Collaborators:
 
 ## API
 
