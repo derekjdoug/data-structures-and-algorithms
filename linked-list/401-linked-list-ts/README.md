@@ -8,6 +8,10 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 Use a queue for pet adoptions based on the type of animal requested.
 
+## Whiteboard
+
+![CC 12](./img/code-challenge-12.png)
+
 ## Approach & Efficiency
 
 This was a fun challenge, I feel like parts of it were a throwback to code challenges from 201 and 301. Observation: it is much easier to work with arrays rather than linked lists.
