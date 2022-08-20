@@ -29,7 +29,8 @@ export class Shelter {
     } else if (type === "dog") {
       for(let i = 0; i < this.shelterQueue.length; i++) {
         if(this.shelterQueue[i].type === "dog"){
-          return this.shelterQueue[i].name;
+          let adoptee = this.shelterQueue.splice(i, 1);
+          return adoptee[0].name;
         }
       }
     }

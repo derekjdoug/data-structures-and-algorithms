@@ -1,4 +1,4 @@
-# Code Challenge 11
+# Code Challenge 12
 
 ## Singly Linked List
 
@@ -6,13 +6,13 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 ## Challenge
 
-Implement a data structure called SetOfStacks that creates a new stack once the previous stack has exceeded capacity.
+Use a queue for pet adoptions based on the type of animal requested.
 
 ## Approach & Efficiency
 
-This was a fun challenge. I leaned on some of the prior code that I had written and adapted it for stacks and queues.
+This was a fun challenge, I feel like parts of it were a throwback to code challenges from 201 and 301. Observation: it is much easier to work with arrays rather than linked lists.
 
-## Collaborators:
+## Collaborators
 
 ## API
 
