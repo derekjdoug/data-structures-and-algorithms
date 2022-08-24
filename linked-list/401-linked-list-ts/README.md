@@ -1,4 +1,4 @@
-# Code Challenge 12
+# Code Challenge 13
 
 ## Singly Linked List
 
@@ -6,17 +6,17 @@ I created a linked list using an ES6 Class in TypeScript. This singly linked lis
 
 ## Challenge
 
-Use a queue for pet adoptions based on the type of animal requested.
+Create a bracket parser!
 
 ## Whiteboard
 
-![CC 12](./img/code-challenge-12.png)
+![CC 13](./img/code-challenge-13.png)
 
 ## Approach & Efficiency
 
-This was a fun challenge, I feel like parts of it were a throwback to code challenges from 201 and 301. Observation: it is much easier to work with arrays rather than linked lists.
+My teammate, Hugo took the lead on the idea for this one. The idea was to push the closing bracket to a stack, and pop them off when they're matched.
 
-## Collaborators
+## Collaborators: Hugo Thompson
 
 ## API
 
